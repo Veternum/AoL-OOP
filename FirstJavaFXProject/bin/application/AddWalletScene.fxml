@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" style="-fx-background-color: EAFDFC;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainSceneController">
+   <children>
+      <TextField fx:id="tfWalletName" layoutX="68.0" layoutY="249.0" prefHeight="26.0" prefWidth="222.0" />
+      <Circle fill="#bfeaf5" layoutY="525.0" radius="75.0" stroke="#bfeaf5" strokeType="INSIDE" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="166.0" text="Add Wallet" textAlignment="CENTER" textFill="#82aae3">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Circle fill="#bfeaf5" layoutX="75.0" layoutY="600.0" radius="75.0" stroke="#bfeaf5" strokeType="INSIDE" />
+      <Circle fill="#bfeaf5" layoutX="285.0" radius="75.0" stroke="#bfeaf5" strokeType="INSIDE" />
+      <Circle fill="#bfeaf5" layoutX="360.0" layoutY="74.0" radius="75.0" stroke="#bfeaf5" strokeType="INSIDE" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="126.0" layoutY="216.0" text="Wallet Name" textFill="#82aae3">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfWalletDescription" layoutX="68.0" layoutY="339.0" prefHeight="26.0" prefWidth="222.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="107.0" layoutY="300.0" text="Wallet Description" textFill="#82aae3">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="96.0" layoutY="400.0" mnemonicParsing="false" onAction="#addWalletBtn" prefHeight="22.0" prefWidth="162.0" style="-fx-background-color: #82AAE3; -fx-background-radius: 50;" text="Add!" textAlignment="CENTER" textFill="#eafdfc">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
