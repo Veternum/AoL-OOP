@@ -1,9 +1,11 @@
 package application;
 
+import java.util.ArrayList;
+
 public class Wallet {
 	protected String walletName;
 	protected double walletTotal;
-	protected Transaction transaction;
+	protected ArrayList<Transaction> transactions = new ArrayList<>();
 
 	public Wallet(String walletName) {
 		super();
@@ -26,12 +28,12 @@ public class Wallet {
 		this.walletTotal = walletTotal;
 	}
 
-	public Transaction getTransaction() {
-		return transaction;
+	public ArrayList<Transaction> getTransaction() {
+		return transactions;
 	}
 
-	public void setTransaction(Transaction transaction) {
-		this.transaction = transaction;
+	public void setTransaction(ArrayList<Transaction> transaction) {
+		this.transactions = transaction;
 	}
 
 }

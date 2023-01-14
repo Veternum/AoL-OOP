@@ -28,9 +28,9 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="cbChooseWallet" layoutX="69.0" layoutY="208.0" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
+      <ChoiceBox fx:id="cbChooseWallet" layoutX="69.0" layoutY="208.0" onDragDetected="#cbChooseWalletDrag" onDragDone="#cbChooseWalletDone" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
          <effect>
-            <InnerShadow blurType="ONE_PASS_BOX">
+            <InnerShadow blurType="GAUSSIAN">
                <color>
                   <Color red="0.5098039507865906" green="0.6666666865348816" blue="0.8901960849761963" />
                </color>
@@ -55,7 +55,7 @@
       </Button>
       <TextField fx:id="tfTransactionValue" layoutX="69.0" layoutY="293.0" prefHeight="26.0" prefWidth="222.0" style="-fx-background-radius: 10;">
          <effect>
-            <InnerShadow>
+            <InnerShadow blurType="GAUSSIAN">
                <color>
                   <Color red="0.9176470637321472" green="0.9921568632125854" blue="0.9882352948188782" />
                </color>
@@ -63,7 +63,7 @@
          </effect></TextField>
       <TextField fx:id="tfTransactionCategory" layoutX="69.0" layoutY="376.0" prefHeight="26.0" prefWidth="222.0" style="-fx-background-radius: 10;">
          <effect>
-            <InnerShadow blurType="ONE_PASS_BOX">
+            <InnerShadow blurType="GAUSSIAN">
                <color>
                   <Color red="0.9176470637321472" green="0.9921568632125854" blue="0.9882352948188782" />
                </color>

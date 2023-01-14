@@ -57,7 +57,7 @@
       <Circle fill="#bfeaf5" layoutX="75.0" layoutY="600.0" radius="75.0" stroke="#bfeaf5" strokeType="INSIDE" />
       <Circle fill="#bfeaf5" layoutX="285.0" radius="75.0" stroke="#bfeaf5" strokeType="INSIDE" />
       <Circle fill="#bfeaf5" layoutX="360.0" layoutY="74.0" radius="75.0" stroke="#bfeaf5" strokeType="INSIDE" />
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="332.87" mnemonicParsing="false" prefHeight="47.13" prefWidth="243.0" style="-fx-background-color: #82AAE3; -fx-background-radius: 50;" text="Show Transactions" textAlignment="CENTER" textFill="#eafdfc">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="332.87" mnemonicParsing="false" onAction="#switchToShowTransactionsScene" prefHeight="47.13" prefWidth="243.0" style="-fx-background-color: #82AAE3; -fx-background-radius: 50;" text="Show Transactions" textAlignment="CENTER" textFill="#eafdfc">
          <font>
             <Font name="Arial Bold" size="20.0" />
          </font>

@@ -52,5 +52,6 @@
             <Image url="@../../Resource/Group%2011.png" />
          </image>
       </ImageView>
+      <Label fx:id="invalidWallet" layoutX="114.0" layoutY="257.0" prefHeight="17.0" prefWidth="142.0" textFill="RED" />
    </children>
 </AnchorPane>

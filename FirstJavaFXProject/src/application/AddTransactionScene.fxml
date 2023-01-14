@@ -28,7 +28,7 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="cbChooseWallet" layoutX="69.0" layoutY="208.0" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
+      <ChoiceBox fx:id="cbChooseWallet" layoutX="69.0" layoutY="208.0" onDragDetected="#cbChooseWalletDrag" onDragDone="#cbChooseWalletDone" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
          <effect>
             <InnerShadow blurType="GAUSSIAN">
                <color>
