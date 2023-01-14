@@ -15,9 +15,9 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" style="-fx-background-color: EAFDFC;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddTransactionSceneController">
    <children>
       <Circle fill="#bfeaf5" layoutY="525.0" radius="75.0" stroke="#bfeaf5" strokeType="INSIDE" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="87.0" layoutY="135.0" text="Add Transaction" textAlignment="CENTER" textFill="#82aae3" underline="true">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="72.0" layoutY="124.0" text="Add Transaction" textAlignment="CENTER" textFill="#82aae3" underline="true">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Black" size="24.0" />
          </font>
       </Label>
       <Circle fill="#bfeaf5" layoutX="75.0" layoutY="600.0" radius="75.0" stroke="#bfeaf5" strokeType="INSIDE" />
@@ -28,7 +28,7 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="cbChooseWallet" layoutX="69.0" layoutY="208.0" onDragDetected="#cbChooseWalletDrag" onDragDone="#cbChooseWalletDone" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
+      <ChoiceBox fx:id="cbChooseWallet" layoutX="69.0" layoutY="208.0" prefHeight="26.0" prefWidth="222.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
          <effect>
             <InnerShadow blurType="GAUSSIAN">
                <color>

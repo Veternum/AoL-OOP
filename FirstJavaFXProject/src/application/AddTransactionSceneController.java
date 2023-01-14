@@ -30,7 +30,6 @@ public class AddTransactionSceneController {
 	// Event Listener on Button.onAction
 	@FXML
 	public void expenseBtn(ActionEvent event) throws IOException {
-		
 		Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
