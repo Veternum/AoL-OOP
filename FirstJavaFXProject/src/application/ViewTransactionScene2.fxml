@@ -48,9 +48,9 @@
       </ImageView>
       <TableView fx:id="dbTable" layoutX="14.0" layoutY="166.0" prefHeight="358.0" prefWidth="331.0" style="-fx-background-color: EAFDFC; -fx-background-radius: 6;">
         <columns>
-            <TableColumn fx:id="dbDate" prefWidth="88.80004596710205" text="Date" />
-          <TableColumn fx:id="dbCategory" prefWidth="149.5999755859375" text="Category" />
-            <TableColumn fx:id="dbValue" prefWidth="96.00001525878906" text="Value" />
+            <TableColumn fx:id="dbDate" prefWidth="102.40002155303955" text="Date" />
+            <TableColumn fx:id="dbValue" prefWidth="114.4000244140625" text="Value" />
+          <TableColumn fx:id="dbCategory" prefWidth="119.99995422363281" text="Category" />
         </columns>
          <effect>
             <ColorAdjust brightness="-0.15" contrast="0.25" hue="-0.99" saturation="0.17" />
