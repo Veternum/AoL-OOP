@@ -1,11 +1,16 @@
 package application;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Income extends Transaction {
 
-	public Income(double value, String category, Date date) {
+	public Income(double value, String category, Timestamp date) {
 		super(value, category, date);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Income(double value, String category) {
+		super(value, category);
 		// TODO Auto-generated constructor stub
 	}
 

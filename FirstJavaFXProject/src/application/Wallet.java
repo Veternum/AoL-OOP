@@ -1,5 +1,6 @@
 package application;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -39,10 +40,14 @@ public class Wallet {
 
 	public void addTransaction(int value, String category, boolean isExpense) {
 		if (isExpense) {
-			transactions.add(new Expense(value, category, new Date()));
+			transactions.add(new Expense(value, category));
 		} else {
-			transactions.add(new Income(value, category, new Date()));
+			transactions.add(new Income(value, category));
 		}
+	}
+	
+	public void setTransactions(ArrayList<Transaction> transactions) {
+		this.transactions = transactions;
 	}
 
 	public void printTransactions() {
@@ -59,5 +64,7 @@ public class Wallet {
 			}
 		}
 	}
+	
+	
 	
 }

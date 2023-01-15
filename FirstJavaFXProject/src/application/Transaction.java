@@ -1,17 +1,24 @@
 package application;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public abstract class Transaction {
 	protected double value;
 	protected String category;
-	protected Date date;
+	protected Timestamp date;
 
-	public Transaction(double value, String category, Date date) {
+	public Transaction(double value, String category, Timestamp date) {
 		super();
 		this.value = value;
 		this.category = category;
 		this.date = date;
+	}
+	
+	public Transaction(double value, String category) {
+		super();
+		this.value = value;
+		this.category = category;
+		this.date = new Timestamp(System.currentTimeMillis());
 	}
 
 	public double getValue() {
@@ -30,11 +37,11 @@ public abstract class Transaction {
 		this.category = category;
 	}
 
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
 	
