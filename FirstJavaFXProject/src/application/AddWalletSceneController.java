@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 
@@ -43,11 +44,10 @@ public class AddWalletSceneController {
 	public void checkAddWallet(ActionEvent event) throws IOException {
 		String walletName = tfWalletName.getText();
 		
-		if (walletName.length() <= 20) {
+		if (walletName.length() <= 20 && validateWalletName(walletName)) {
 			Wallet wallet = new Wallet(walletName);
 			User.addWallet(wallet);
 			
-//			AddTransactionSceneController.addCbChooseWalletValue(walletName);
 			
 			Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -55,8 +55,24 @@ public class AddWalletSceneController {
 			stage.setScene(scene);
 			stage.show();
 			
-		} else {
+		} else if (walletName.length() > 20) {
+			
 			invalidWallet.setText("Wallet name must be < 20");
+			
+		} else {
+			
+			invalidWallet.setText("No duplicate wallet");
+			
 		}
+	}
+
+
+	private boolean validateWalletName(String find) {
+		
+		for (Wallet x: User.wallets) {
+			if (x.getWalletName().equals(find)) return false;
+		}
+		
+		return true;
 	}
 }

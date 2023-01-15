@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Wallet {
 	protected String walletName;
@@ -36,4 +37,27 @@ public class Wallet {
 		this.transactions = transaction;
 	}
 
+	public void addTransaction(int value, String category, boolean isExpense) {
+		if (isExpense) {
+			transactions.add(new Expense(value, category, new Date()));
+		} else {
+			transactions.add(new Income(value, category, new Date()));
+		}
+	}
+
+	public void printTransactions() {
+
+		for (Transaction x : transactions) {
+			if (x instanceof Expense) {
+				
+				System.out.println(((Expense) x).toString());
+				
+			} else if (x instanceof Income) {
+				
+				System.out.println(((Income) x).toString());
+				
+			}
+		}
+	}
+	
 }
