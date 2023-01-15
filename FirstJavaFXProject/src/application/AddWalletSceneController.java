@@ -29,16 +29,11 @@ public class AddWalletSceneController {
 	// Event Listener on Button.onAction
 	@FXML
 	public void addWalletBtn(ActionEvent event) throws IOException {
-		checkAddWallet(event);
-	}
-		
-	
-	public void checkAddWallet(ActionEvent event) throws IOException {
 		String walletName = tfWalletName.getText();
 		
 		if (walletName.length() <= 20 && validateWalletName(walletName)) {
-			Wallet wallet = new Wallet(walletName);
-			User.addWallet(wallet);
+			
+			User.addWalletNames(walletName);
 			
 			
 			Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
@@ -57,8 +52,7 @@ public class AddWalletSceneController {
 			
 		}
 	}
-
-
+	
 	private boolean validateWalletName(String find) {
 		
 		for (Wallet x: User.wallets) {

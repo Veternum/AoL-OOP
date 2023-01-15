@@ -8,9 +8,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import Database.DbHandler;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -31,28 +33,19 @@ public class AddTransactionSceneController implements Initializable {
 	@FXML
 	private Parent root;
 	
-//	private String[] walletNames;
-	private ArrayList<String> walletNames = new ArrayList<>();
-	
-//	private ObservableList<String> items = new
-
 	// Event Listener on Button.onAction
 	@FXML
 	public void expenseBtn(ActionEvent event) throws IOException {
-		int value = Integer.parseInt(tfTransactionValue.getText());
+		String walletName = cbChooseWallet.getValue();
+		double value = Double.parseDouble(tfTransactionValue.getText());
 		String category = tfTransactionCategory.getText();
+		Timestamp date = new Timestamp(System.currentTimeMillis());
 		
 //		if (!validateBtnClicked(value, category)) {
 //			return;
 //		}
 		
-		Wallet wallet = getChoosenWallet();
-		
-		if (wallet == null) return;
-		
-		wallet.addTransaction(value, category, true);
-		
-		wallet.printTransactions();
+		DbHandler.insert(walletName, value, category, date, true);
 		
 		// template switch to main scene
 		Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
@@ -66,20 +59,16 @@ public class AddTransactionSceneController implements Initializable {
 	// Event Listener on Button.onAction
 	@FXML
 	public void incomeBtn(ActionEvent event) throws IOException {
-		int value = Integer.parseInt(tfTransactionValue.getText());
+		String walletName = cbChooseWallet.getValue();
+		double value = Double.parseDouble(tfTransactionValue.getText());
 		String category = tfTransactionCategory.getText();
+		Timestamp date = new Timestamp(System.currentTimeMillis());
 		
 //		if (!validateBtnClicked(value, category)) {
 //			return;
 //		}
 		
-		Wallet wallet = getChoosenWallet();
-		
-		if (wallet == null) return;
-		
-		wallet.addTransaction(value, category, false);
-		
-		wallet.printTransactions();
+		DbHandler.insert(walletName, value, category, date, false);
 		
 		// template switch to main scene
 		Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
@@ -89,20 +78,10 @@ public class AddTransactionSceneController implements Initializable {
 		stage.show();
 	}
 	
-	public void addCbChooseWalletValue(String walletName) {
-		cbChooseWallet.getItems().add(walletName);
-	}
-	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		ArrayList<Wallet> wallets = User.wallets;
 		
-		walletNames.clear();
-		for (Wallet x : wallets) {
-			walletNames.add(x.getWalletName());
-		}
-		
-		cbChooseWallet.getItems().setAll(walletNames);
+		cbChooseWallet.getItems().setAll(User.walletNames);
 		
 	}
 	
@@ -117,15 +96,5 @@ public class AddTransactionSceneController implements Initializable {
 		
 		return true;
 	}
-	
-	private Wallet getChoosenWallet() {
-		String walletName = cbChooseWallet.getValue();
-		
-		for (Wallet x: User.wallets) {
-			if (x.getWalletName().equals(walletName)) return x;
-		}
-		
-		return null;
-}
 	
 }

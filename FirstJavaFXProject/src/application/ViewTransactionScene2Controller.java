@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
+import Database.Connect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -56,11 +57,14 @@ public class ViewTransactionScene2Controller implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		String walletName = ViewTransactionScene1Controller.CbChooseViewWaletValue; // Example
+		labelWalletName.setText("Wallet: "+walletName);
+		
+		//database handling
 		dbDate.setCellValueFactory(new PropertyValueFactory<>("dbDate"));
 		dbCategory.setCellValueFactory(new PropertyValueFactory<>("dbCategory"));
 		dbValue.setCellValueFactory(new PropertyValueFactory<>("dbValue"));
 		try {
-			String walletName = "School"; // Example
 			Connect connect1 = Connect.getConnection();
 			String query = "SELECT * FROM user WHERE walletName = '" + walletName + "'";
 			
