@@ -29,14 +29,6 @@ public class AddWalletSceneController {
 	// Event Listener on Button.onAction
 	@FXML
 	public void addWalletBtn(ActionEvent event) throws IOException {
-//		String walletName = tfWalletName.getText();
-//		
-//		Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
-//		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//		scene = new Scene(root);
-//		stage.setScene(scene);
-//		stage.show();
-		
 		checkAddWallet(event);
 	}
 		
