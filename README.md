@@ -1,10 +1,7 @@
 ## About the Project
 Aplikasi ini merupakan sebuah aplikasi budget tracker yang bernama Moni Tracker.  Pada aplikasi ini user dapat mencatat pemasukkan dan pengeluaran anggarannya dengan lebih mudah dan effisien.  
 
-## Build With 
-Aplikasi ini kami rancang dengan menggunakan javafx, screen builder serta eclipse.
-
-{logo eclipse dan yang lain-lain}
+Aplikasi ini kami rancang dengan menggunakan Javafx, Scene Builder serta Eclipse.
 
 
 ## Getting Started
