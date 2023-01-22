@@ -23,7 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.scene.control.TableColumn;
 
-public class ViewTransactionScene2Controller implements Initializable{
+public class ViewTransactionScene2Controller implements Initializable {
 	@FXML
 	private Label labelWalletName;
 	@FXML
@@ -56,11 +56,11 @@ public class ViewTransactionScene2Controller implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		String walletName = ViewTransactionScene1Controller.CbChooseViewWaletValue; // Example
+		
+		String walletName = ViewTransactionScene1Controller.CbChooseViewWaletValue;
 		labelWalletName.setText("Wallet: "+walletName);
 		
-		//database handling
+		//database view
 		dbDate.setCellValueFactory(new PropertyValueFactory<>("dbDate"));
 		dbCategory.setCellValueFactory(new PropertyValueFactory<>("dbCategory"));
 		dbValue.setCellValueFactory(new PropertyValueFactory<>("dbValue"));
@@ -74,7 +74,7 @@ public class ViewTransactionScene2Controller implements Initializable{
 				listView.add(new TableModel(
 						rs.getString("transactDate"),
 						rs.getString("transactCategory"),
-						(rs.getBoolean("isExpense")?"(-)  ":"(+) ")+"IDR "+rs.getString("transactValue")));
+						(rs.getBoolean("isExpense")?"(-)  ":"(+) ")+"IDR "+String.format("%,.2f", rs.getDouble("transactValue"))));
 			}
 			dbTable.setItems(listView);
 		} catch (Exception e) {

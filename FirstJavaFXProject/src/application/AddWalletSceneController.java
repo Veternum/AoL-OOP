@@ -33,6 +33,7 @@ public class AddWalletSceneController {
 		
 		if (walletName.length() <= 20 && validateWalletName(walletName)) {
 			
+			System.out.println(validateWalletName(walletName));
 			User.addWalletNames(walletName);
 			
 			
@@ -55,8 +56,8 @@ public class AddWalletSceneController {
 	
 	private boolean validateWalletName(String find) {
 		
-		for (Wallet x: User.wallets) {
-			if (x.getWalletName().equals(find)) return false;
+		for (String x: User.walletNames) {
+			if (x.equals(find)) return false;
 		}
 		
 		return true;
